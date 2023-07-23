@@ -31,6 +31,7 @@ export default {
   async mounted() {
     await liff.init({
       liffId: '2000204440-j5OAweZX',
+      withLoginOnExternalBrowser: true,
     });
 
     liff.ready.then(() => {
