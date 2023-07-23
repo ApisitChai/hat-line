@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        Nuxt
-      </h1>
+      <h1 class="title">Nuxt</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -28,7 +26,18 @@
 </template>
 
 <script>
-export default {}
+import liff from '@line/liff';
+export default {
+  async mounted() {
+    await liff.init({
+      liffId: '2000204440-j5OAweZX',
+    });
+
+    liff.ready.then(() => {
+      alert(liff.getOS());
+    });
+  },
+};
 </script>
 
 <style>
@@ -42,16 +51,8 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
